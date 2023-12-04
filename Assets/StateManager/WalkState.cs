@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class WalkState : StateMachineBehaviour
 {
     float timer;
-    List<Transform> wayPoints = new List<Transform>();
+    public List<Transform> wayPoints = new List<Transform>();
     NavMeshAgent agent;
     Transform player;
     float chaseRange = 8f;
