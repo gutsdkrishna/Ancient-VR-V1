@@ -69,7 +69,7 @@ public class wolf: MonoBehaviour
         {
             Vector3 direction = (player.position - transform.position).normalized;
             RaycastHit hit;
-            Debug.Log(direction);
+            //Debug.Log(direction);
             
             if(Physics.Raycast(transform.position,direction,out hit, sightDistance)) {
 
@@ -101,13 +101,13 @@ public class wolf: MonoBehaviour
                 if (ai.remainingDistance <= catchDistance)
                 {
 
-                    player.gameObject.SetActive(false);
+                    //player.gameObject.SetActive(false);
                     aiAnim.ResetTrigger("walk");
                     aiAnim.ResetTrigger("chase");
                     aiAnim.ResetTrigger("Buff");
-                    aiAnim.SetTrigger("jumpscare");
+                    aiAnim.SetTrigger("Attack1");
                     StartCoroutine(deathRoutine());
-                    chasing = false;
+                    //chasing = false;
 
                 }
             }
