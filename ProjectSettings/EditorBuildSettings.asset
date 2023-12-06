@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 026766bc23601de47b5da538a33d3c3a
   - enabled: 1
-    path: Assets/Scenes/Chravuyh.unity
-    guid: 945f6c5d10d4b49bdbed0071de9c41f3
-  - enabled: 1
-    path: Assets/Scenes/Jungle_Scene.unity
-    guid: 8a54351d28550434eaef9d3eb03b552c
-  - enabled: 1
     path: Assets/Scenes/Krishna.unity
     guid: a79df55c3a0974b1c8f81fc179656fec
   m_configObjects:
