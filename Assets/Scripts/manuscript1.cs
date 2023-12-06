@@ -1,25 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class manuscript1 : MonoBehaviour
+public class XRPlayerCollision : MonoBehaviour
 {
-    public GameObject manu;
-    public GameObject photo;
+    public GameObject canvasToShow; // Assign the Canvas GameObject in the Inspector
+    public string playerTag = "Player"; // Set the tag of your XR Origin Rig
+
+    private void Start()
+    {
+        if (canvasToShow != null)
+        {
+            canvasToShow.SetActive(false); // Ensure the Canvas is initially hidden
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("on trigger");
-        if (other.tag == "Player")
+        if (other.CompareTag(playerTag))
         {
-            manu.SetActive(true);
-            photo.SetActive(true);
+            Debug.Log("Player entered trigger zone");
+            ShowCanvas();
         }
     }
-    public void OnTriggerExit(Collider other)
-    {
-        manu.SetActive(false);
-    }
-    
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag(playerTag))
+        {
+            Debug.Log("Player exited trigger zone");
+            HideCanvas();
+        }
+    }
+
+    private void ShowCanvas()
+    {
+        if (canvasToShow != null)
+        {
+            canvasToShow.SetActive(true);
+        }
+    }
+
+    private void HideCanvas()
+    {
+        if (canvasToShow != null)
+        {
+            canvasToShow.SetActive(false);
+        }
+    }
 }
