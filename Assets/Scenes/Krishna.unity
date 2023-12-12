@@ -14927,7 +14927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719a3c9b4bf54434ebe31d7f1e316ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1601677117}
   animator: {fileID: 7023411941873202527}
 --- !u!195 &7023411941873202529
 NavMeshAgent:
