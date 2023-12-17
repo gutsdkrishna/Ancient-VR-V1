@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class FadeScreen : MonoBehaviour
 {
     public bool fadeOnStart = true;
@@ -15,7 +15,18 @@ public class FadeScreen : MonoBehaviour
     void Start()
     {
         rend = GetComponent<Renderer>();
+
+        // Check if Renderer component is present
+        if (rend == null)
+        {
+            Debug.LogWarning("Renderer component not found on " + gameObject.name);
+            return;
+        }
+
         rend.enabled = false;
+
+        if (fadeOnStart)
+            FadeIn();
 
         if (fadeOnStart)
             FadeIn();
