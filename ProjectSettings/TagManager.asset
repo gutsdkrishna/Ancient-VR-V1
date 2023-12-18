@@ -8,6 +8,7 @@ TagManager:
   - Capsule
   - Enemy
   - UI
+  - Axe
   layers:
   - Default
   - TransparentFX
