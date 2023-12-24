@@ -10,6 +10,9 @@ public class AxeInteraction : MonoBehaviour
     private Rigidbody rb;
     public float throwForce = 30f;
     private float originalTimeScale;
+    public float torqueMagnitude = 10f;
+    public float decreasedGravityFactor = 0.5f; // Adjust as needed
+
 
     void Start()
     {
@@ -69,10 +72,19 @@ public class AxeInteraction : MonoBehaviour
         // Detach the axe from the player's hand
         transform.parent = null;
 
+        // Calculate the axis of rotation (around the AxeCenter point)
+        Vector3 rotationAxis = Vector3.Cross(throwDirection, Vector3.up);
+
         // Apply force to throw the axe in the calculated direction
         rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
 
         // Optional: Rotate the axe while throwing
-        // rb.AddTorque(Vector3.up * 10f, ForceMode.Impulse);
+        rb.AddTorque(rotationAxis * torqueMagnitude, ForceMode.Impulse);
+
+        // Decrease gravity (only for the axe)
+        Vector3 opposingGravity = Physics.gravity * decreasedGravityFactor;
+        rb.AddForce(opposingGravity, ForceMode.Acceleration);
     }
+
+
 }
