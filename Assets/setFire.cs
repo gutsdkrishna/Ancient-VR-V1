@@ -12,11 +12,11 @@ public class setFire : MonoBehaviour
     {
 
         t = GetComponent<Transform>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     private void Update()
     {
-        //Debug.Log((player.position - t.position).magnitude);
+        Debug.Log((player.position - t.position).magnitude);
         if(player==null || t == null)
         {
             Debug.Log("tag nhi mila");
