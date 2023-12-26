@@ -14,7 +14,7 @@ public class UITrigger : MonoBehaviour
     {
 
         t = GetComponent<Transform>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+       // player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     private void Update()
     {
@@ -26,7 +26,7 @@ public class UITrigger : MonoBehaviour
         }
         if (!cnt)
         {
-            Debug.Log((player.position - t.position).magnitude);
+           // Debug.Log((player.position - t.position).magnitude);
             if ((player.position - t.position).magnitude <= 3)
             {
                 Debug.Log("UI");
