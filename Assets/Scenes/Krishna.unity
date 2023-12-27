@@ -341,8 +341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa5477830e11423ebda1da7a2408ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tip: {fileID: 602043644}
 --- !u!23 &45328623
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1563,7 +1561,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2384,8 +2382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa5477830e11423ebda1da7a2408ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tip: {fileID: 148641346}
 --- !u!23 &725725061
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2768,8 +2764,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa5477830e11423ebda1da7a2408ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tip: {fileID: 1893145070}
 --- !u!23 &888315990
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4267,8 +4261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa5477830e11423ebda1da7a2408ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tip: {fileID: 1361531737}
 --- !u!23 &1343418546
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5070,7 +5062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039e2020d0a794ae7ba9cd7ab5fe677c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &1622627205
 GameObject:
   m_ObjectHideFlags: 0
@@ -5884,8 +5875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa5477830e11423ebda1da7a2408ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tip: {fileID: 1106490248}
 --- !u!23 &1806827540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9212,125 +9201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c123750d26334a13badc4b8b6a3078f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 2466478040342762808}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 6
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2466478040342762812}
-        m_TargetAssemblyTypeName: PullInteraction, Assembly-CSharp
-        m_MethodName: SetPullInteractor
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2466478040342762812}
-        m_TargetAssemblyTypeName: PullInteraction, Assembly-CSharp
-        m_MethodName: Release
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  start: {fileID: 2466478040102966809}
-  end: {fileID: 2466478039799966523}
-  notch: {fileID: 2466478039529635321}
-  _audioSource: {fileID: 1622627207}
 --- !u!23 &2466478040598081309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10915,8 +10785,13 @@ MonoBehaviour:
   m_Turn: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SnapTurn: {fileID: -7374733323251553461, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_Move: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_UIScroll: {fileID: 0}
   m_SmoothMotionEnabled: 1
   m_SmoothTurnEnabled: 0
+  m_UIScrollingEnabled: 0
+  m_RayInteractorChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3814184454585548889
 GameObject:
   m_ObjectHideFlags: 0
@@ -11331,8 +11206,13 @@ MonoBehaviour:
   m_Turn: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SnapTurn: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_Move: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_UIScroll: {fileID: 0}
   m_SmoothMotionEnabled: 0
   m_SmoothTurnEnabled: 0
+  m_UIScrollingEnabled: 0
+  m_RayInteractorChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4072308054223917841
 GameObject:
   m_ObjectHideFlags: 0
@@ -14554,8 +14434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa5477830e11423ebda1da7a2408ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  tip: {fileID: 450884463}
 --- !u!54 &6786802363890606225
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14641,8 +14519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9827f52576bac4e9298f78d937f797aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 0}
-  notch: {fileID: 6786802363890606223}
 --- !u!1 &6865458266645425372
 GameObject:
   m_ObjectHideFlags: 0
@@ -14927,7 +14803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719a3c9b4bf54434ebe31d7f1e316ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 7023411941873202527}
 --- !u!195 &7023411941873202529
 NavMeshAgent:
   m_ObjectHideFlags: 0
