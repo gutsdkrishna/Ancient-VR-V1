@@ -12,7 +12,7 @@ public class AxeInteraction : MonoBehaviour
     private float originalTimeScale;
     public float torqueMagnitude = 10f;
     public float decreasedGravityFactor = 0.5f; // Adjust as needed
-
+    public Canvas tutorialCanvas;
 
     void Start()
     {
@@ -27,17 +27,23 @@ public class AxeInteraction : MonoBehaviour
     void OnGrab(XRBaseInteractor interactor)
     {
         // Show your UI here
-        // ...
-
+        if (tutorialCanvas != null)
+        {
+            tutorialCanvas.gameObject.SetActive(true);
+        }
         // Store the original time scale
         originalTimeScale = Time.timeScale;
 
         // Slow down time for the tutorial effect
-        Time.timeScale = 0.2f;
+        Time.timeScale = 0.01f;
     }
 
     void OnRelease(XRBaseInteractor interactor)
     {
+        if (tutorialCanvas != null)
+        {
+            tutorialCanvas.gameObject.SetActive(false);
+        }
         // Restore the original time scale
         Time.timeScale = originalTimeScale;
 
