@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JUNGLEV2.unity
     guid: c333e6ade870e4b2388c387e75c26d46
+  - enabled: 1
+    path: Assets/castleDemo.unity
+    guid: 0f30b31df1c21274da0aa193ec9e46e6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 105531a4185503541a7ab33a6ef1b6da, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 07b61e89487cfd344bca84e2e8dffb8e, type: 2}
