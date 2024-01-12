@@ -35,7 +35,7 @@ public class AxeInteraction : MonoBehaviour
         originalTimeScale = Time.timeScale;
 
         // Slow down time for the tutorial effect
-        Time.timeScale = 0.01f;
+        Time.timeScale = 0.5f;
     }
 
     void OnRelease(XRBaseInteractor interactor)
