@@ -13,6 +13,7 @@ public class AxeInteraction : MonoBehaviour
     public float torqueMagnitude = 10f;
     public float decreasedGravityFactor = 0.5f; // Adjust as needed
     public Canvas tutorialCanvas;
+    public int damageAmount = 20;
 
     void Start()
     {
@@ -91,6 +92,14 @@ public class AxeInteraction : MonoBehaviour
         Vector3 opposingGravity = Physics.gravity * decreasedGravityFactor;
         rb.AddForce(opposingGravity, ForceMode.Acceleration);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        //Destroy(transform.GetComponent<Rigidbody>());
+        if (other.tag == "Enemy")
+        {
+            transform.parent = other.transform;
+            other.GetComponent<ORCW>().TakeDamage(damageAmount);
 
-
+        }
+    }
 }

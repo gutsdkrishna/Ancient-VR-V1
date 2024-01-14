@@ -6,25 +6,33 @@ using UnityEngine.AI;
 public class ChaseState : StateMachineBehaviour
 {
     NavMeshAgent agent;
-    GameObject playerVRHeadset; // Replace with the actual VR headset GameObject
+    Transform player; // Replace with the actual VR headset GameObject
 
     // Set your desired distances
-    public float chaseRange = 15f;
-    public float attackRange = 2.5f;
+    public float chaseRange = 30f;
+    public float attackRange = 3f;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerVRHeadset = GameObject.FindGameObjectWithTag("Player"); // Change tag if necessary
+        player = GameObject.FindGameObjectWithTag("Player").transform; // Change tag if necessary
+
         agent = animator.GetComponent<NavMeshAgent>();
-        agent.speed = 1.5f;
+
+        agent.speed = 10f;
         agent.stoppingDistance = attackRange; // Set stopping distance for attacking
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (playerVRHeadset != null)
+        agent.SetDestination(player.position);
+
+
+
+
+        /*
+        if (player != null)
         {
-            float distance = Vector3.Distance(playerVRHeadset.transform.position, animator.transform.position);
+            float distance = Vector3.Distance(player.transform.position, animator.transform.position);
 
             if (distance > chaseRange)
             {
@@ -44,6 +52,7 @@ public class ChaseState : StateMachineBehaviour
                 }
             }
         }
+        */
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

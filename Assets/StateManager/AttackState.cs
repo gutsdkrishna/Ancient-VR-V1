@@ -3,7 +3,7 @@ using UnityEngine;
 public class AttackState : StateMachineBehaviour
 {
     Transform player;
-    float attackRange = 2.5f; // Adjust this value based on your desired attack range
+    float attackRange = 3f; // Adjust this value based on your desired attack range
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
