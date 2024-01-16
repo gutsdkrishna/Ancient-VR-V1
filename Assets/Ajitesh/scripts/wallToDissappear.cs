@@ -16,7 +16,7 @@ public class wallToDissappear : MonoBehaviour
     private void Update()
     {
         //Debug.Log((Wall.transform.position - axe.transform.position).magnitude);
-        if ((Wall.transform.position - axe.transform.position).magnitude <= 4 && hit)
+        if ((Wall.transform.position - axe.transform.position).magnitude <= 5 && hit)
         {
             Debug.Log("hitted");
             wallToDisappear.SetActive(false);
