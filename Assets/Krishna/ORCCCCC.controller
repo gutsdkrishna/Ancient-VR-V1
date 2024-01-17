@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wayPoints: []
-  chaseRange: 30
+  chaseRange: 0
 --- !u!1101 &8857937976712404013
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

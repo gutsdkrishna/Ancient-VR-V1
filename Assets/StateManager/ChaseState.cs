@@ -29,7 +29,7 @@ public class ChaseState : StateMachineBehaviour
 
 
 
-        /*
+        
         if (player != null)
         {
             float distance = Vector3.Distance(player.transform.position, animator.transform.position);
@@ -52,7 +52,7 @@ public class ChaseState : StateMachineBehaviour
                 }
             }
         }
-        */
+        
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
