@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-
+using System.Collections;
+using System.Collections.Generic;
 public class AxeInteraction : MonoBehaviour
 {
     public GameObject axePrefab; // Assign your axe prefab in the Unity Editor
@@ -54,10 +55,10 @@ public class AxeInteraction : MonoBehaviour
         // Spawn a new axe at the specified spawn point
         SpawnNewAxe(spawnPoint.position, spawnPoint.rotation);
 
-        // Disable the current axe
-        //gameObject.SetActive(false);
+        // Disable the current axe after 7 seconds
+        StartCoroutine(DisableAxeAfterDelay(7f));
 
-        // Throw the axe in the calculated direction
+        // Throw the new axe in the calculated direction
         ThrowAxe(throwDirection);
     }
 
@@ -92,6 +93,15 @@ public class AxeInteraction : MonoBehaviour
         Vector3 opposingGravity = Physics.gravity * decreasedGravityFactor;
         rb.AddForce(opposingGravity, ForceMode.Acceleration);
     }
+
+    IEnumerator DisableAxeAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Disable the GameObject after the delay
+        gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         //Destroy(transform.GetComponent<Rigidbody>());
@@ -99,7 +109,6 @@ public class AxeInteraction : MonoBehaviour
         {
             transform.parent = other.transform;
             other.GetComponent<ORCW>().TakeDamage(damageAmount);
-
         }
     }
 }

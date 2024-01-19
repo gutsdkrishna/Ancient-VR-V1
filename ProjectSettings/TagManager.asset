@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - UI
   - Axe
+  - Waypoint
   layers:
   - Default
   - TransparentFX
