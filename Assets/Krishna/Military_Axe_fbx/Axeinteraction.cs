@@ -56,7 +56,6 @@ public class AxeInteraction : MonoBehaviour
         SpawnNewAxe(spawnPoint.position, spawnPoint.rotation);
 
         // Disable the current axe after 7 seconds
-        StartCoroutine(DisableAxeAfterDelay(7f));
 
         // Throw the new axe in the calculated direction
         ThrowAxe(throwDirection);
@@ -92,6 +91,8 @@ public class AxeInteraction : MonoBehaviour
         // Decrease gravity (only for the axe)
         Vector3 opposingGravity = Physics.gravity * decreasedGravityFactor;
         rb.AddForce(opposingGravity, ForceMode.Acceleration);
+        //StartCoroutine(DisableAxeAfterDelay(7f));
+
     }
 
     IEnumerator DisableAxeAfterDelay(float delay)

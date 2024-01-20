@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public List<Transform> waypoints = new List<Transform>();
+    //public List<Transform> waypoints = new List<Transform>();
     public Animator enemyAnimator;
 
     private NavMeshAgent agent;
@@ -30,22 +30,25 @@ public class EnemyAI : MonoBehaviour
         if (isRunning)
         {
             agent.SetDestination(GameObject.FindGameObjectWithTag("Player").transform.position);
+            agent.speed = 10f;
         }
     }
 
     void SetNextWaypoint()
     {
-        if (waypoints.Count > 0)
+        /*if (waypoints.Count > 0)
         {
             int randomIndex = Random.Range(0, waypoints.Count);
             Transform nextWaypoint = waypoints[randomIndex];
 
             agent.SetDestination(nextWaypoint.position);
+            agent.speed = 5f;
+            
         }
         else
         {
             Debug.LogError("No waypoints available.");
-        }
+        }*/
     }
 
     void OnTriggerEnter(Collider other)
