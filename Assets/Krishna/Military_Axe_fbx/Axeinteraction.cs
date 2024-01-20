@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using System.Collections;
-using System.Collections.Generic;
+
 public class AxeInteraction : MonoBehaviour
 {
     public GameObject axePrefab; // Assign your axe prefab in the Unity Editor
@@ -15,6 +15,8 @@ public class AxeInteraction : MonoBehaviour
     public float decreasedGravityFactor = 0.5f; // Adjust as needed
     public Canvas tutorialCanvas;
     public int damageAmount = 20;
+
+    private GameObject newAxe; // Reference to the newly spawned axe
 
     void Start()
     {
@@ -53,45 +55,50 @@ public class AxeInteraction : MonoBehaviour
         Vector3 throwDirection = Camera.main.transform.forward;
 
         // Spawn a new axe at the specified spawn point
-        SpawnNewAxe(spawnPoint.position, spawnPoint.rotation);
+        newAxe = SpawnNewAxe(spawnPoint.position, spawnPoint.rotation);
 
         // Disable the current axe after 7 seconds
         StartCoroutine(DisableAxeAfterDelay(7f));
 
         // Throw the new axe in the calculated direction
-        ThrowAxe(throwDirection);
+        ThrowAxe(newAxe, throwDirection);
     }
 
-    void SpawnNewAxe(Vector3 position, Quaternion rotation)
+    GameObject SpawnNewAxe(Vector3 position, Quaternion rotation)
     {
         // Instantiate the new axe prefab at the specified position and rotation
-        GameObject newAxe = Instantiate(axePrefab, position, rotation);
+        GameObject axe = Instantiate(axePrefab, position, rotation);
 
         // Enable the XRGrabInteractable on the new axe
-        XRGrabInteractable newGrabInteractable = newAxe.GetComponent<XRGrabInteractable>();
+        XRGrabInteractable newGrabInteractable = axe.GetComponent<XRGrabInteractable>();
         newGrabInteractable.enabled = true;
+
+        return axe; // Return the reference to the newly spawned axe
     }
 
-    void ThrowAxe(Vector3 throwDirection)
+    void ThrowAxe(GameObject axeObject, Vector3 throwDirection)
     {
+        // Get the Rigidbody of the newly spawned axe
+        Rigidbody axeRb = axeObject.GetComponent<Rigidbody>();
+
         // Make the Rigidbody non-kinematic to enable physics
-        rb.isKinematic = false;
+        axeRb.isKinematic = false;
 
         // Detach the axe from the player's hand
-        transform.parent = null;
+        axeObject.transform.parent = null;
 
         // Calculate the axis of rotation (around the AxeCenter point)
         Vector3 rotationAxis = Vector3.Cross(throwDirection, Vector3.up);
 
         // Apply force to throw the axe in the calculated direction
-        rb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
+        axeRb.AddForce(throwDirection * throwForce, ForceMode.Impulse);
 
         // Optional: Rotate the axe while throwing
-        rb.AddTorque(rotationAxis * torqueMagnitude, ForceMode.Impulse);
+        axeRb.AddTorque(rotationAxis * torqueMagnitude, ForceMode.Impulse);
 
         // Decrease gravity (only for the axe)
         Vector3 opposingGravity = Physics.gravity * decreasedGravityFactor;
-        rb.AddForce(opposingGravity, ForceMode.Acceleration);
+        axeRb.AddForce(opposingGravity, ForceMode.Acceleration);
     }
 
     IEnumerator DisableAxeAfterDelay(float delay)

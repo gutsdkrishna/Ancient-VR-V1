@@ -30,6 +30,7 @@ public class EnemyAI : MonoBehaviour
         if (isRunning)
         {
             agent.SetDestination(GameObject.FindGameObjectWithTag("Player").transform.position);
+            agent.speed = 15f;
         }
     }
 

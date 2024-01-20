@@ -14,7 +14,6 @@ public class ORCW : MonoBehaviour
         // Get the NavMeshAgent component
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        StartCoroutine(DestroyAfterDeath());
     }
 
     public void TakeDamage(int damageAmount)
@@ -39,6 +38,8 @@ public class ORCW : MonoBehaviour
     {
         isDead = true;
         animator.SetTrigger("die");
+        StartCoroutine(DestroyAfterDeath());
+
 
         // Disable the NavMeshAgent to stop movement
         if (navMeshAgent != null)
