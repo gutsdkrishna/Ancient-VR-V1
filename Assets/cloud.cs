@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class cloud : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Material mat;
+    public Color emissionColor = Color.red; // Set your desired emission color in the inspector
+
+    Renderer rend;
+
     void Start()
     {
-        //mat = GetComponent<Material>();
-        mat.EnableKeyword("Emission");
+        rend = GetComponent<Renderer>();
+
+        // Make sure the material supports emission
+        rend.material.EnableKeyword("_EMISSION");
     }
 
-    // Update is called once per frame
-    
+    void Update()
+    {
+        // Modify the emission color based on your requirements
+        rend.material.SetColor("_EmissionColor", emissionColor);
+    }
+
 }
