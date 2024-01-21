@@ -5,27 +5,25 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    //public List<Transform> waypoints = new List<Transform>();
+    public Transform centerPoint; // The center of the circle
+    public float circleRadius = 5f; // The radius of the circle
+    public float patrolDelay = 2f; // Delay between each waypoint change
     public Animator enemyAnimator;
 
     private NavMeshAgent agent;
     private bool isHit = false;
     private bool isRaged = false;
     private bool isRunning = false;
+    private List<Transform> wayPoints = new List<Transform>(); // Add this line to declare the list
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        SetNextWaypoint();
+        StartCoroutine(PatrolInCircle());
     }
 
     void Update()
     {
-        if (!isHit && !isRaged && !agent.pathPending && agent.remainingDistance < 0.1f)
-        {
-            SetNextWaypoint();
-        }
-
         // Check if the enemy is running and chase the player
         if (isRunning)
         {
@@ -34,21 +32,37 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void SetNextWaypoint()
+    Vector3 GetRandomPointInCircle()
     {
-        /*if (waypoints.Count > 0)
-        {
-            int randomIndex = Random.Range(0, waypoints.Count);
-            Transform nextWaypoint = waypoints[randomIndex];
+        // Generate a random point within the circle
+        Vector2 randomPoint = Random.insideUnitCircle.normalized * circleRadius;
+        Vector3 randomWaypoint = centerPoint.position + new Vector3(randomPoint.x, 0f, randomPoint.y);
+        return randomWaypoint;
+    }
 
-            agent.SetDestination(nextWaypoint.position);
-            agent.speed = 5f;
-            
-        }
-        else
+    IEnumerator PatrolInCircle()
+    {
+        while (true)
         {
-            Debug.LogError("No waypoints available.");
-        }*/
+            yield return new WaitForSeconds(patrolDelay);
+
+            if (!isHit && !isRaged && !isRunning)
+            {
+                // Check if there are waypoints in the list
+                if (wayPoints.Count > 0)
+                {
+                    // Set the destination to a random waypoint
+                    agent.SetDestination(wayPoints[Random.Range(0, wayPoints.Count - 1)].position);
+                    agent.speed = 5f;
+                }
+                else
+                {
+                    // If no waypoints are available, move to a random point in the circle
+                    agent.SetDestination(GetRandomPointInCircle());
+                    agent.speed = 5f;
+                }
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)
