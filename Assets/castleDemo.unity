@@ -2058,6 +2058,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -2.148
       objectReference: {fileID: 0}
+    - target: {fileID: 8730137485632183450, guid: 48cb0630a83c04ef88a86e89838667df, type: 3}
+      propertyPath: m_MoveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8954186863869414145, guid: 48cb0630a83c04ef88a86e89838667df, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -16717,7 +16721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VIJAYI BHAV
+  m_text: YOU WIN !!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5b036e831c0c90547b32a8a896d80f79, type: 2}
   m_sharedMaterial: {fileID: 2427308795250815149, guid: 5b036e831c0c90547b32a8a896d80f79, type: 2}

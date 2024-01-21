@@ -24,7 +24,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a158d294ba5b94a2591cdb0f44f9ad09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
+  waypointTag: Waypoint
   chaseRange: 30
 --- !u!1101 &-6682194106967258916
 AnimatorStateTransition:

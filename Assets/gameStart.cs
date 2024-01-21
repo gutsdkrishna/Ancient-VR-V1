@@ -17,11 +17,7 @@ public class gameStart : MonoBehaviour
     public void start()
     {
         anim.SetBool("start",true);
-        StartCoroutine(changescene());
 
     }
-    IEnumerator changescene() {
-        yield return new WaitForSeconds(5f);
-        SceneManager.LoadSceneAsync(1);
-    }
+    
 }
