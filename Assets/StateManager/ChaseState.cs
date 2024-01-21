@@ -18,7 +18,7 @@ public class ChaseState : StateMachineBehaviour
 
         agent = animator.GetComponent<NavMeshAgent>();
 
-        agent.speed = 10f;
+        agent.speed = 6f;
         agent.stoppingDistance = attackRange; // Set stopping distance for attacking
     }
 
